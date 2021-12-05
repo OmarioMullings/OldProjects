@@ -1,0 +1,100 @@
+<!-- 
+    Omario Mullings
+    028050151
+    Assingment2 INT222
+    18/11/19
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+    <title>Student Info Assignment2 INT222</title>
+</head>
+<body bgcolor="#cccccc">
+    <!-- Sends info to PHP file -->
+    <form name="studentRecord" method="post" action="http://www.elizabethcastro.com/html6ed/examples/forms/showform.php">
+        <!-- input student info -->
+        <table>
+            <tr>
+                <td align="left">
+                    Student Full Name: 
+                </td>
+                <td><input type="text" name="sName" size="40" /></td>
+                <td><blockquote></blockquote></td>
+                <td><b>Gender:</b></td>
+                <td align="left"> Male</td>
+                <td><blockquote></blockquote></td>
+                <td align="right"><input type="radio" name="sex" value="Male" /></td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Student Number: 
+                </td>
+                <td><input type="text" name="sNumber" /></td>
+                <td><blockquote></blockquote></td>
+                <td><blockquote></blockquote></td>
+                <td align="left"> Female</td>
+                <td><blockquote></blockquote></td>
+                <td align="right"><input type="radio" name="sex" value="Female" /></td>
+            </tr>
+        </table>
+        <!--End of inputing student info -->
+        <!-- Assignments table -->
+        <br />
+        <table width="100%">
+            <caption>Which Assignment(s) from the course outline have you completed already?</caption>
+            <tr>
+               <td align="right"><input type="checkbox" name="assingment" />Assignment # 1</td> 
+               <td align="left"><input type="checkbox" name="assingment" />Assignment # 4</td>
+            </tr>
+            <tr>
+               <td align="right"><input type="checkbox" name="assingment" />Assignment # 2</td> 
+               <td align="left"><input type="checkbox" name="assingment" />Assignment # 5</td>
+            </tr>
+            <tr>
+               <td align="right"><input type="checkbox" name="assingment" />Assignment # 3</td> 
+               <td align="left"><input type="checkbox" name="assingment" />Assignment # 6</td>
+            </tr>
+        </table>
+        <!-- End of Assignments table -->
+        <br />
+        <!-- Topics --> 
+        <p align="center">The following below are all the topics that we will be covering this semester.<br />
+            Select the topic(s) that you haven't fully understood yet.</p>
+        <div align="center">
+            <select align =  name="courseToUnderstand">
+                <option value="html">HTML</option>
+                <option value="basic_xhtml" selected="selected">BASIC XHTML</option>
+                <option value="links_lists">LINKS & LISTS</option>
+                <option value="tables">TABLES</option>
+                <option value="frames">FRAMES</option>
+                <option value="forms">FORMS</option>
+                <option value="dhtml_css">DHTML & CSS</option>
+                <option value="javescript_objects_events.">JAVASCRIPT OBJECTS & EVENTS</option>
+            </select>
+        </div>
+        <!-- End of Topics -->
+        <!-- Comments -->
+        <div align="center">
+            <p>General Comments:</p>
+            <textarea  name="generalComments" rows="15" cols="100">
+            </textarea>
+        </div>
+        <!--End of Comments -->
+        <!-- Password and submit/reset buttons -->
+        <p>Please Enter your password in order to submit the form:</p>
+            <b>Password:</b><input type="password" name="userPassword" />
+            <br />
+            <div align="right">
+                <input type="submit" value="Submit" size="30" />
+                <input type="reset" value="Reset" size="30" />
+            </div>
+        <!-- End of form -->
+    </form>
+    <p><i>Disclaimer:<br />   
+        This site is a student project only. Any opinions, statements or claims expressed here are that of this site's creator and are not necessarily those of Seneca College. Questions or comments about this site can be directed to my Seneca College e-mail address student's @learn.senecac.on.ca e-mail address.
+    </i></p>
+</body>
+</html>
