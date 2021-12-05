@@ -1,0 +1,239 @@
+<!-- 
+	Omario Mullings
+	0280505151
+	oomullings@myseneca.ca
+	INT222
+	Assignment3
+-->
+<!-- One function is used to validate the entire form -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>
+        Assignment # 3 Main Body
+	</title>
+	<script type="text/javascript">
+		//Variables used
+		var hasLetters = /^[A-Za-z]+$/;
+		var hasNumbers = /^[0-9]+$/;
+		var password = "senecac";
+
+        function validatetext()
+		{
+			//-------STUDENT FULL NAME-------//
+			if (document.studentrec.StudentFullName.value == "")
+			{
+				alert("please enter a Student Full Name");
+				return false;
+			}//end of if validate Student Name has a value
+			else if(!(document.studentrec.StudentFullName.value.match(hasLetters)))
+			{
+				
+				alert("Student Name Must contain Only Letters Uppercase and lowercase");
+				return false
+			}//end of validate Student Name has only letters
+
+			//--------STUDENT NUMBER-------//
+			if (document.studentrec.StudentNumber.value == "")
+			{
+				alert("please enter a StudentNumber");
+				return false;
+			}//end of if validate StudentNumber has a value
+
+			else if(!(document.studentrec.StudentNumber.value.match(hasNumbers)))
+			{
+				
+				alert("StudentNumber Must contain Only NUMBERS 0-9");
+				return false
+			}//end of validate StudentNumber HAS ONLY NUMBERS
+
+			//------------PASSWORD---------//
+			if(!(document.studentrec.password.value.match(password)))
+			{
+				alert("Wrong Password!");
+				return false;
+			}//end of Password correct check
+
+			//---------CHECK BOXES-------//
+			if(document.studentrec.a1.checked == false && 
+				document.studentrec.a2.checked == false &&
+				document.studentrec.a3.checked == false &&
+				document.studentrec.a4.checked == false &&
+				document.studentrec.a5.checked == false &&
+				document.studentrec.a6.checked == false)
+			{
+				confirm("Please Select One Item!")
+				return false
+			}//end of check box checked validator
+
+			//---------Radio Buttons-------//
+			if(document.studentrec.gender[0].checked == false && document.studentrec.gender[1].checked == false)
+			{
+				document.write("Please Select One Item!");
+				return false;
+			}//end of check gender is selected validator
+
+			//---------Select-----------//
+			if(document.studentrec.courselist.selectedIndex == -1)
+			{
+				alert("Please select one of the topics for the semester")
+				return false;
+			}//end of select item selected validator
+
+			//-----------textarea--------//
+			if(document.studentrec.comments.value.length < 5)
+			{
+				alert("Please enter atleast 5 characters into the comments")
+				return false;
+			}//end of if text are has characters over 4
+			
+			else 
+			{
+				return true;
+			}//default
+		}// end of validate func
+		//-----To Upper----//
+		function ProUpper()
+			{
+				var programLower = document.studentrec.program.value;
+				document.studentrec.program.value = programLower.toUpperCase();
+			}
+		
+	</script>
+</head>
+<body background="greybkgrd.gif">
+	<img src="splashpage.jpg" name = "splashpage" id="splashpage" alt="splashpage" />
+	<script type="text/javascript"> document.getElementById("splashpage").height = "125";</script>
+
+<form method="post" name = "studentrec" action="http://www.elizabethcastro.com/html6ed/examples/forms/showform.php" onsubmit="return validatetext()">
+
+<table>
+	<tr>
+		<td><b>Student Full Name :</b></td>
+		<td><input type="text" name="StudentFullName"size = "40" /></td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td><b>Gender:</b></td>
+		<td>&nbsp;</td>
+		<td>Male </td>
+		<td><input type="radio" name="gender" value="male" /></td>
+	</tr>
+
+	<tr>
+		<td><b>Student Number :</b></td>
+		<td><input type="text" name="StudentNumber"size="15" /></td>
+		<td colspan="3">&nbsp;</td>
+		<td>Female</td>
+		<td><input type="radio" name="gender" value="female" /></td>
+	</tr>
+</table>
+
+<br />
+
+<p>
+Which Assignment(s) from the course outline have you completed already?
+</p>
+
+<center>
+
+<table>
+	<tr>
+		<td><input type="checkbox" name="a1" value="assignment1" />Assignment # 1</td>
+		<td></td>
+		<td><input type="checkbox" name="a4" value="assignment4" />Assignment # 4</td>
+	</tr>
+
+	<tr>
+		<td><input type="checkbox" name="a2" value="assignment2" />Assignment # 2</td>
+		<td></td>
+		<td><input type="checkbox" name="a5" value="assignment5" />Assignment # 5</td>
+	</tr>
+
+	<tr>
+		<td><input type = "checkbox" name = "a3" value = "assignment3" />Assignment # 3</td>
+		<td></td>
+		<td><input type = "checkbox" name = "a6" value = "assignment6" />Assignmen t# 6</td>
+		</tr>
+</table>
+
+</center>
+
+<br />
+
+The following below are all the topics that we will be covering this semester
+
+<br />
+Select the topic(s) that you haven't fully understood yet.
+<br />
+<br />
+<br />
+
+<center>
+<select name = "courselist" size = "2">
+	<option value = "html">HTML</option>
+	<option value = "basic_xhtml">BASIC XHTML</option>
+	<option value = "links_lists">LINKS and LISTS</option>
+	<option value = "tables">TABLES</option>
+	<option value = "frames">FRAMES</option>
+	<option value = "forms">FORMS</option>
+	<option value = "dhtml">DHTML and CSS</option>
+	<option value = "js_objects_events">JAVASCRIPT OBJECTS and EVENTS.</option>
+
+</select>
+</center>
+
+<br />
+General Comments:
+<br />
+
+<textarea name = "comments" rows = "10" cols = "100">
+</textarea>
+<br />
+<br />
+
+Please Enter your password in order to submit the form:
+<br />
+
+<b>Password:</b><input type = "password" name = "password" />
+<br />
+<br />
+Please enter your Program name in lowercase:<input type ="text" name = "program" size = "85" />
+<br />
+Convert to Uppercase: <input type="button" value="My Program @ Seneca" name = "convert" onclick="ProUpper()" />
+<br />
+<br />
+<table>
+	<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</td>
+		<td>
+			<input type = "submit"  value = "        Submit         " />
+			<input type = "reset" value = "         Reset         " />
+		</td>
+	</tr>
+</table>
+
+
+</form>
+<p><i>Disclaimer:<br />   
+        This site is a student project only. Any opinions, statements or claims expressed here are that of this site's creator and are not necessarily those of Seneca College. Questions or comments about this site can be directed to my Seneca College e-mail address student's @learn.senecac.on.ca e-mail address.
+    </i></p>
+</body>
+</html>
