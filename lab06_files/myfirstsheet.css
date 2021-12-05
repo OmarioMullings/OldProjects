@@ -1,0 +1,42 @@
+.bodytext
+{
+	font-family: arial, helvetica, sans-serif; font-size: medium; color: #0000ff;
+}
+
+h1,h2,p
+{
+	font-family: arial, helvetica, sans-serif; font-size: x-large; color: #ff0000;
+	text-align: center
+}
+body 
+{
+	background-image: url("mountains.jpg");
+	background-repeat: no-repeat;
+}
+
+a
+{
+	font-family: Arial, Helvetica, sans-serif; 
+	text-decoration: none;
+	font-style: italic;
+	color: blue;
+}
+
+p.heading 
+{
+	font-family: arial, helvetica, sans-serif; font-size: x-large;
+	text-align: left;
+	background-color: lightblue;
+	border: 1px solid black;
+	margin: 25px;
+}
+
+ul {
+  background: #3399ff;
+  padding: 20px;
+}
+
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}

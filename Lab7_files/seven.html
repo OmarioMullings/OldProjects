@@ -1,0 +1,69 @@
+<!-- INT222 Lab 7 
+	Using Scripts
+	Omario Mullings
+	2019/11/26
+	Version 1
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Lab 7 scripts and such</title>
+    <script language="Javascript" type="text/javascript">
+		<!--
+    		function xmas() 
+    		{
+    			var one_day = 1000 * 60 * 60 * 24;
+    			var present_date = new Date(); 
+    			var christmas_day = new Date(present_date.getFullYear(), 11, 25);
+    			if (present_date.getMonth() == 11 && present_date.getdate() > 25) 
+    			christmas_day.setFullYear(christmas_day.getFullYear() + 1);
+    			var Result = Math.round(christmas_day.getTime() - present_date.getTime()) / (one_day);
+    			var Final_Result = Result.toFixed(0); 
+    			document.getElementById("message").innerHTML = "Number of days til christmass =" + Final_Result;
+    			//document.write("dateToday");
+    		}
+
+    	   	function button()
+			{
+				
+				alert("goodmorning");
+			}
+
+			if(navigator.appName == "")
+		-->
+    </script>
+  </head>
+  <body>
+  	<h1>Click the button to Run the Script!</h1>
+  	<br />
+  	<p><a href="javascript:test();" name="text">Click ME!!</a></p>
+  		<button type="submit" value="click me!" name="Script" onclick="test();"></button> 
+  	<br />
+  	<br />
+  	<hr width="100%">
+  	<form>
+  		<table width="100%" border="2" align="center" cellpadding="4">
+  			<tr>
+  				<td align="left">
+  					<input type="button" style="height:50px;width:300px" onclick="button()" id="morningBtn" value="Good Morning"></input>
+  					 </td>
+  				<td align="left">
+  					<button style="height:50px;width:300px" type="button" value="click me!" name="Evening" onclick="button();">
+  						Evening
+  					</button> 
+  				</td>
+  			</tr>
+  			<tr>
+  				<td>
+  					<p id="message"></p>
+  				</td>	
+  			</tr>
+  		</table>
+  	</form>
+  		
+  </body>
+</html>
+
