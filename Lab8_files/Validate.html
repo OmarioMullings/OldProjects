@@ -1,0 +1,49 @@
+<!--
+    Omario Mullings
+    028050151
+    Lab 8 Validation methods
+    INT222
+    29/11/19 
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Validators</title>
+        <script type="text/javascript">
+        	function validatetext()
+			{
+				if (document.testfields.user.value == "")
+				{
+					alert("please enter a username");
+					return false;
+				}	
+			}
+			function validatechar()
+			{
+				var sCheck = /[a-zA-Z]{1,}a/
+				if (sCheck.test(document.testfields.studnum.value))
+				{
+					return true
+				}
+				else
+				{
+					alert("please enter a characters in student #");
+					return false;
+				}	
+			}	
+        </script>
+    </head>
+<body>
+	<form method="post" name="testfields" action="http://www.elizabethcastro.com/html6ed/examples/forms/showform.php" onsubmit="return validatetext()">
+
+		Username: <input type="text" name="user"/><br /> <!-- Validate length of text -->
+		Student #: <input type="text" name="studnum"><br />
+
+		<input type="submit" name="submit" value="Validate">
+
+	</form>
+</body>
+</html>
